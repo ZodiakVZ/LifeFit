@@ -1,0 +1,440 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  --text-color: white;
+  --header-height: 5rem;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+div{
+  display: block;
+}
+
+body* {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/*Imagem de Fundo Muie na Bike da tela de Início*/
+body{ 
+  background: url(/images_tela1/muieNAbike.png) no-repeat top center/100%;
+}
+
+.containerHeader {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
+  width: 300vh;
+  transition: background-color 0.3s;
+  
+}
+
+.revealLogo,
+.revealNav,
+.revealElipse-escura,
+.revealTitulo,
+.revealSubtitulo,
+.revealLoginButtonContainer,
+.revealInfoLifeFit,
+.revealLogoLifeFitAmarelo,
+.revealRetanguloCinza,
+.revealTexto1,
+.revealTexto2,
+.revealTexto3,
+.revealComments,
+.revealMuieVerdeComment1,
+.revealMuieVerdeComment2,
+.revealMuieVerdeComment3{
+  visibility: hidden;
+}
+
+header#mainHeader {
+  /*background-color: var(--primary-color);
+  */display: flex;
+  height: var(--header-height);
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: height .8s ease;
+  width: 100%;
+  z-index: 100;
+}
+
+#mainHeader{
+ position: fixed;
+  transition: background-color 0.3s;
+}
+
+#mainHeader.showHeader{
+  background-color: initial !important;
+}
+
+header nav {
+  position: relative;
+  align-items: center;
+  display: flex;
+}
+
+#Logo{
+  user-select: none; /*Impossibilita de selecionar ao clickar e arrastar com o mouse dentro do site*/
+  text-align: left;
+  z-index: 1;
+}
+
+#Logo img{
+ width: 200px;
+ top: 1101px;
+ left: 1671px;
+ 
+} 
+
+#ButtonContainer {
+  display: flex; /* Isso também deve ser um flex container para alinhar os botões horizontalmente */
+  gap: 100px; /* Espaço entre os botões */
+  padding: 10px 0px;
+  position:absolute;
+  justify-content: center;
+  user-select: none;
+  background: none;
+  text-decoration: none;
+  
+}
+
+#ButtonContainer button {
+  height: 200px; /* Altura igual à da imagem do logo */
+  /*margin: 0 100px; /* Adiciona margem à esquerda e à direita de cada botão */
+  background: transparent; /* Torna o fundo dos botões transparente */
+   /* Remove a borda padrão dos botões */
+  color: #fff; /* Define a cor do texto dos botões para branco, ajuste conforme necessário */
+  cursor: pointer; /* Muda o cursor para indicar que o elemento é clicável */
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+  top: -110px;
+  left: 22%;
+}
+
+.btn{
+  border: none;
+}
+
+.btn:hover{
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#inicioBtn,
+#quemSomosBtn,
+#simuleMetaBtn {
+  margin: 0 60px;
+  padding: 5px 10px;
+}
+
+#loginBtn{
+  margin: 0 200px;
+  padding: 5px 0px;
+}
+
+
+#Container{
+  position: relative;
+  width: 1920px;
+  max-width: 100%; /* Isso garante que o contêiner não ultrapasse a largura da viewport */
+  height: 6725px;
+  border: 1px solid red;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box; /* Isso faz com que a borda seja incluída no cálculo da largura */
+  
+}
+
+/* Elipse Escura */
+#Elipse-escura {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 1133px;
+  height: 1361px;
+  z-index: -1; /* Coloca a elipse atrás do conteúdo */
+  user-select: none;
+}
+
+#Titulo_subtitulo {
+  position: absolute; /* Posicionamento absoluto em relação ao contêiner pai */
+  top: 5%; /* Alinha o topo do elemento ao centro vertical do contêiner pai */
+  left: 5%; /* Alinha o lado esquerdo do elemento a 10% do contêiner pai */
+  transform: translateY(-50%, -50%); /* Move o elemento para cima metade da sua própria altura para centralizá-lo verticalmente */
+  max-width: 50%; /* Ajuste conforme necessário para controlar a largura do título e subtítulo */
+  text-align: left; /* Alinha o texto à esquerda */
+  color: #fff; /* Ajuste a cor conforme necessário */
+  z-index: 1;
+}
+
+/*Titulo estilização*/
+#Titulo {
+  font-size: 76px; /* Ajuste conforme necessário */
+  font-weight: 900; /* Peso da fonte alto */
+  margin-bottom: 10px; /* Espaçamento inferior entre o título e o subtítulo */
+}
+
+/*Subtitulo estilização*/
+#Subtitulo {
+  font-size: 18px; /* Ajuste conforme necessário */
+  font-weight: 800; /* Peso da fonte alto */
+  color: #fff; /* Ajuste a cor conforme necessário */
+  
+}
+
+#LoginButton{
+  position: absolute;
+  transform: translateX(50%); /* Ajusta o posicionamento do botão */
+  cursor: pointer;
+  margin-top: 30px;
+  right: 80%;
+}
+
+/* Botão de login efeito de hover */
+#LoginButton:hover img{
+  filter: brightness(90%); /* Reduz o brilho da imagem ao passar o mouse */
+  transform: translateY(-10px); /* Move a imagem para cima */
+}
+
+/* Efeito de clique */
+#LoginButton:active {
+  transform: translateX(50%) translateY(5px); /* Desloca o botão para baixo ao ser clicado */
+}
+
+#LoginButton img{
+  transition: transform 0.2s ease; /* Adiciona uma transição suave para a propriedade transform */
+}
+
+#Retangulo_Triangulo {
+  top: 16.6%;
+  user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 5vh; /* Ajuste a altura conforme necessário */
+}
+
+/* Retangulo escuro e triangulo invertido para dividir parte de cima e baixo da tela inicial */
+#Retangulo {
+  top: -50%;
+  width: 100%;
+  height: 15vh; /* Ajuste a altura conforme necessário */
+  background: url(/images_tela1/Rectangle.png) repeat-x; /* Utiliza a imagem retângulo.png como plano de fundo */
+  z-index: 1; /* Certifique-se de que o retângulo esteja atrás do conteúdo */
+}
+
+
+#Triangulo {
+  position: absolute;
+  top: 2vh; /* Ajuste conforme necessário para a posição do triângulo */
+  left: calc(47.5% - 20px); /* Calcula a posição para o triângulo ficar no meio */
+  width: 15vh;
+  height: 10vh;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid transparent;
+  background: url(/images_tela1/triangulo_invertido.png) no-repeat; /* Utiliza a imagem triangulo.png como plano de fundo */
+  z-index: 0; /* Certifique-se de que o triângulo esteja acima do retângulo */
+}
+
+/* Informações iniciais do LIFEFIT */
+#InfoLifeFit{
+  user-select: none;
+  position: absolute;
+  top: 22%;
+  right: 76%; /* Posiciona a nova imagem no centro horizontal */
+  transform: translateX(50%); /* Centraliza horizontalmente */
+  width: 100px; /* Ajuste a largura conforme necessário */
+  height: 100px; /* Ajuste a altura conforme necessário */
+  background-size: cover; /* Ajusta o tamanho da imagem */
+  z-index: 0; /* Coloca a nova imagem na frente do retângulo e do triângulo */
+}
+
+/* Logo amarela do lifefit */
+#LogoLifeFitAmarelo{
+  user-select: none;
+  position: absolute;
+  top: 25%;
+  right: 52%; /* Posiciona a nova imagem no centro horizontal */
+  transform: translateX(50%); /* Centraliza horizontalmente */
+  height: auto; /* Ajuste a altura conforme necessário */
+  background-size: cover; /* Ajusta o tamanho da imagem */
+  z-index: 1; /* Coloca a nova imagem na frente do retângulo e do triângulo */
+}
+
+/* Retângulos cinzas embaixo da Logo LIFEFIT amarela*/
+#RetanguloCinza {
+  position: absolute;
+  user-select: none;
+  max-height: 1420px;
+  max-width: 250vh;
+  padding: 0%;
+  top: 43%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+
+#CinzaMenor{
+  width: 40px;
+  height: 100vh;
+  transform: translate(0%, 0%);
+  background: url(/images_tela1/RetanguloCinzaMenor.png) repeat-x;
+  z-index: 0;
+}
+
+#CinzaMaior{
+  width: 100%;
+  height: 255vh; /* Ajuste a altura conforme necessário */
+  transform: translate(18.5%, -39.1%);
+  background: url(/images_tela1/RetanguloCinzaMaior.png) no-repeat; 
+  z-index: 1; /* Certifique-se de que o triângulo esteja acima do retângulo */
+}
+
+/*Repetição das imagens da bola amarela dentro do retângulo cinza maior*/
+#BolaAmarela1,
+#BolaAmarela2,
+#BolaAmarela3{
+  z-index: 2; /* Garante que a bola amarela fique por cima */
+  width: 100px; /* Ajuste conforme necessário */
+  height: 100px; /* Ajuste conforme necessário */
+  background: url('/images_tela1/bolaAmarela.png') no-repeat; /* Substitua pelo caminho da imagem */
+}
+/*1* primeira bola */
+#BolaAmarela1{
+  transform: translate(-21%, 290%); /* Centraliza a bola amarela */
+}
+/*2* primeira bola */
+#BolaAmarela2 {
+  transform: translate(-21%, 680%); /* Centraliza a bola amarela */
+}
+/*3* primeira bola */
+#BolaAmarela3 {
+  transform: translate(-21%, 1065%); /* Centraliza a bola amarela */
+}
+
+/*Titulo e texto 1, 2 e 3 abaixo do Logo LIFEFIT Amarelo*/
+#TituloTexto1,
+#TituloTexto3{
+  position: absolute;
+  transform: translateY(-50%);
+  left: calc(0% + 50px); /* Ajuste conforme necessário */
+}
+#TituloTexto1 h2,
+#TituloTexto2 h2,
+#TituloTexto3 h2{
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 50px; /* Espaço entre o título e o parágrafo */
+}
+
+#TituloTexto1 p,
+#TituloTexto2 p,
+#TituloTexto3 p{
+  font-size: 28px;
+  font-weight: 550;
+  margin-top: 0; /* Remove a margem superior do parágrafo */
+}
+
+/*Titulo e texto 1 abaixo do Logo LIFEFIT Amarelo*/
+#TituloTexto1 {
+  top: 36%;
+}
+#TituloTexto1 p {
+  text-align: justify;
+ 
+}
+
+/*Titulo e texto 2 abaixo do Logo LIFEFIT Amarelo*/
+#TituloTexto2 {
+  position: absolute;
+  top: 43%;
+  right: calc(0% + 50px); /* Ajuste conforme necessário */
+  transform: translateY(-50%);
+}
+#TituloTexto2 h2 {
+  text-align: right;
+}
+#TituloTexto2 p {
+  text-align: right;
+}
+
+/*Titulo e texto 3 abaixo do Logo LIFEFIT Amarelo*/
+#TituloTexto3 {
+  top: 50%;
+}
+
+#TituloTexto3 p {
+  text-align: justify;
+}
+
+/* Comentários da galera */
+#Comments{
+  user-select: none;
+  position: absolute;
+  top: 58%;
+  right: 50%; /* Posiciona a nova imagem no centro horizontal */
+  transform: translateX(50%); /* Centraliza horizontalmente */
+  height: auto; /* Ajuste a altura conforme necessário */
+  background-size: cover; /* Ajusta o tamanho da imagem */
+  z-index: 1; /* Coloca a nova imagem na frente do retângulo e do triângulo */
+}
+
+#RetanguloCommentsEsq,
+#RetanguloCommentsDir{
+  user-select: none;
+  position: absolute;
+  bottom: 34%;
+  height: auto; /* Ajuste a altura conforme necessário */
+  z-index: 1; /* Coloca a nova imagem na frente do retângulo e do triângulo */
+}
+
+#RetanguloCommentsEsq{
+  left: 0;
+}
+
+#RetanguloCommentsDir{
+  right: 0;
+}
+
+#MuieVerdeComments1, 
+#MuieVerdeComments2,
+#MuieVerdeComments3{
+  user-select: none;
+  position: absolute;
+  height: auto; /* Ajuste a altura conforme necessário */
+  z-index: 1; /* Coloca a nova imagem na frente do retângulo e do triângulo */
+}
+
+#MuieVerdeComments1{
+  right: 50%;
+  bottom: 31.5%;
+}
+
+#MuieVerdeComments2{
+  left: 50%;
+  bottom: 31.5%;
+}
+
+#MuieVerdeComments3{
+  right: 36.4%;
+  bottom: 27.2%;
+}
+
+
+
+/* No Final passar tudo para dentro de containers de cada parte de informações*/
