@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wdth,wght@75..125,100..800&family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap');
+:root {
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  --header-height: 5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+/*Visibilidade Hidden para funcionar o SCROOL REVIEW*/
+.revealNav,
+.revealLogin{
+  visibility: hidden;
+}
+
+#background{
+  background-image:linear-gradient(rgba(29, 29, 29, 0.4), rgba(29, 29, 29, 0.4)), url(images_telaLogin/BackgroundLogin.png);
+  z-index: -1;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+header{
+  z-index: 50;
+  font-family: "Anek Malayalam", sans-serif;
+  
+}
+
+#containerHeader{
+  margin: 0 auto;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  overflow-y: hidden;
+}
+
+
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 0px 15px;
+}
+
+#Logo{
+  width: 100%;
+  height: 18vh;
+}
+
+#Logo img{
+  width: 100%; 
+}
+.logoHeader{
+  filter: brightness(80%); /* Reduz o brilho da imagem ao passar o mouse */
+}
+.logoHeader img{
+  transition: transform 0.2s ease; /* Adiciona uma transição suave para a propriedade transform */
+}
+.logoHeader:hover img{
+  filter: brightness(80%); /* Reduz o brilho da imagem ao passar o mouse */
+}
+/* Efeito de clique */
+.logoHeader:active img {
+  transform: translateY(5px); /* Desloca o botão para baixo ao ser clicado */
+}
+
+.btn:hover{
+  text-decoration: underline;
+}
+
+
+.selectedLogin {
+  text-decoration: underline;
+}
+
+ul{
+  width: 1200px;
+  margin-right: 2px;
+  display: flex;
+}
+
+li{
+  margin: 0 auto;
+  font-size: 25px;
+  padding-right: 10px ;
+}
+
+li a{
+  color:white;
+}
+
+.loginNav{
+  width: 100px;
+  margin-right: 150px;
+}
+
+.loginNav a{
+  color: white;
+  font-size: 25px;
+}
+
+/* Responsividade para telas menores*/
+@media (max-width: 1200px){
+  header{
+    display: block;
+    width: 100%;
+  }
+
+  #containerHeader{
+    width: 100%;
+    height: 30vh;
+    margin: 0 auto;
+  }
+
+  nav{
+    width: 100%;
+  }
+
+  #Logo{
+    width: 100%;
+    height: auto;
+  }
+
+   #ul-header{
+    display: -ms-inline-grid;
+    width: 100vw;
+    height: 18vh;
+    flex-wrap: nowrap;
+  }
+  
+  li{
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .loginNav{
+    width: 20vw;
+    height: auto;
+    padding-bottom: 70px;
+    margin: 0 auto;
+  }
+  .loginNav a{
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+#login-conteiner{
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  align-items: center; /* Centraliza os itens horizontalmente */
+  align-content: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#formLogin {
+  display: flex;
+  flex-direction: column;
+  font-family: "Anek Malayalam", sans-serif;
+  margin: 0 auto 50px;
+  width: 40vw;
+  height: 50vh;
+}
+
+#formLogin input[type = "email"],
+#formLogin input[type= "password"]{
+    padding: 15px;
+    font-size: 36px;    
+    font-family: "Anek Malayalam", sans-serif;
+    width: 33.6vw;
+    border: 1px solid #ffffffbb;
+    margin: 30px auto 20px;
+    border-radius: 30px;
+    transition: all linear 160ms;
+    outline: none;
+}
+#formLogin input[type="email"]::placeholder, 
+#formLogin input[type="password"]::placeholder {
+  font-family: "Anek Malayalam", sans-serif;
+  opacity: 0.5; /* Defina o valor de opacidade desejado (entre 0 e 1) */
+}
+
+#formLogin input[type="submit"] {
+  background: url(./images_telaLogin/EntrarButton.png) no-repeat;
+  width: 600px; /* Ajuste conforme necessário */
+  height: 80px; /* Ajuste conforme necessário */
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Adicionando uma transição suave */
+  margin: 70px auto 0;
+}
+#formLogin input[type="submit"]:hover {
+  transform: scale(1.03); /* Aumenta o tamanho em 5% */
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 32vw;
+  height: 5vh;
+}
+
+.CinzaEsq, .CinzaDir {
+  width: 30%; /* Largura desejada */
+  height: 5px; /* Altura desejada */
+  background-color: #ccc; /* Cor de fundo desejada */
+  margin-top: 10px;
+}
+
+.ContinueCom {
+  transform: translate(0, -10%);
+  width: 25%; /* Ajuste conforme necessário */
+  height: 3vh; /* Ajuste conforme necessário */
+}
+
+.socialLinks{
+  height: 10vh;
+  width: 32vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.backGoogle img, .backApple img, .backFace img{
+  width: 3.5vw;
+  height: 6.5vh;
+  border-radius: 10px;
+}
+
+.backGoogle:hover, .backApple:hover, .backFace:hover{
+  transform: scale(1.1);
+}

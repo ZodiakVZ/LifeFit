@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wdth,wght@75..125,100..800&family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap');
+:root {
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  --header-height: 5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+/*Visibilidade Hidden para funcionar o SCROOL REVIEW*/
+.revealElipse-escura,
+.revealNav,
+.revealSection,
+.revealInfo,
+.revealLogoAmarela,
+.revealTrace-rectangle,
+.revealFirst-text,
+.revealSecond-text,
+.revealThird-text,
+.revealImgComments,
+.revealRectangleLeft,
+.revealCommentsLeft,
+.revealRectangleRight,
+.revealCommentsRight,
+.revealCommentBottom,
+.revealFAQ
+{
+  visibility: hidden;
+}
+
+
+body{ 
+  background-color: #f1f6fc31;
+}
+
+#background{
+  background-image:linear-gradient(rgba(29, 29, 29, 0.2), rgba(29, 29, 29, 0.2)), url(images_tela1/muieNAbike.png);
+  z-index: -1;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+#Elipse{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url(images_tela1/Ellipse\ 1.png) ;
+  background-repeat: no-repeat;
+  background-position: left top ;
+  background-position-y: -100px;
+  overflow-y: hidden;
+}
+
+header{
+  z-index: 50;
+  font-family: "Anek Malayalam", sans-serif;
+}
+
+#containerHeader{
+  margin: 0 auto;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 0px 15px;
+  overflow-y: hidden;
+}
+
+#Logo{
+  width: 100%;
+  height: 18vh;
+}
+
+#Logo img{
+  width: 100%; 
+}
+.logoHeader{
+  filter: brightness(80%); /* Reduz o brilho da imagem ao passar o mouse */
+}
+.logoHeader img{
+  transition: transform 0.2s ease; /* Adiciona uma transição suave para a propriedade transform */
+}
+.logoHeader:hover img{
+  filter: brightness(80%); /* Reduz o brilho da imagem ao passar o mouse */
+}
+/* Efeito de clique */
+.logoHeader:active img {
+  transform: translateY(5px); /* Desloca o botão para baixo ao ser clicado */
+}
+
+.btn:hover{
+  text-decoration: underline;
+}
+
+.selectedHome {
+  text-decoration: underline;
+}
+
+ul{
+  width: 1200px;
+  margin-right: 2px;
+  display: flex;
+}
+
+li{
+  margin: 0 auto;
+  font-size: 25px;
+  padding-right: 10px ;
+}
+
+li a{
+  color:white;
+}
+
+.loginNav{
+  width: 100px;
+  margin-right: 150px;
+}
+
+.loginNav a{
+  color: white;
+  font-size: 25px;
+}
+
+/* Responsividade para telas menores*/
+@media (max-width: 1200px){
+  header{
+    display: block;
+    width: 100%;
+  }
+
+  #containerHeader{
+    width: 100%;
+    height: 30vh;
+    margin: 0 auto;
+  }
+
+  nav{
+    width: 100%;
+  }
+
+  #Logo{
+    width: 100%;
+    height: auto;
+  }
+
+   #ul-header{
+    display: -ms-inline-grid;
+    width: 100vw;
+    height: 18vh;
+    flex-wrap: nowrap;
+  }
+  
+  li{
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .loginNav{
+    width: 20vw;
+    height: auto;
+    padding-bottom: 70px;
+    margin: 0 auto;
+  }
+  .loginNav a{
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+.first-content{
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: left;
+  position: absolute;
+  display: flex;
+  font-family: "Archivo",sans-serif;
+  padding: 0 100px 150px 100px;
+}
+
+.firstcontent-text h1{
+  color: white;
+  font-weight: 800;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.firstcontent-text p{
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
+/* Animando o botão verde de Login*/
+.btn-login img{
+  transition: transform 0.2s ease;
+}
+.btn-login:hover img{
+  filter: brightness(80%); /* Reduz o brilho da imagem ao passar o mouse */
+  transform: translateY(-6px); /* Move a imagem para cima */
+}
+.btn-login:active img {
+  transform: translateY(6px); /* Desloca o botão para baixo ao ser clicado */
+}
+/*Aqui termina o HEADER*/
+
+/*MAIN Conteúdo principal da Página Inicial*/
+#main-section{
+  width: 100%;
+  height: 600vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Triângulo e Retângulo do começo do MAIN*/
+#Triangulo{
+  background-image: url(images_tela1/triangulo_invertido.png);
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  background-position: top center;
+}
+#Retangulo{
+  background-image: url(images_tela1/Rectangle.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -50px;
+  width: 100vw;
+  height: 10vh;
+  display: block;
+}
+
+/*Info LifeFit e Logo LifeFit Amarela*/
+#Info{
+  width: 100%;
+  height: 110vh;
+  display: flex; 
+  margin: 0 auto;
+  font-family: "Archivo", sans-serif;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+#Info h1{
+  width: 80vw;
+  height: 60vh;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 2.7rem;
+  font-weight: 500;
+  padding-top: 130px;
+  padding: auto;
+  
+}
+#LogoAmarela{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  margin: 0 auto;
+  overflow-y: hidden;
+  gap: 20px;
+  
+}
+#img-yellow{
+  width: 50vw;
+  height: 40vh;
+  background-image: url(images_tela1/LifeFitAmarelo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 455px 0 400px;
+}
+
+/* Conteúdo LifeFIt com linha cinza e bolas amarelas e os 3 textos*/
+#lifefit-content{
+  width: 100%;
+  height: 200vh;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Define três colunas, cada uma ocupando a mesma largura */
+  grid-template-rows: auto auto; /* Define duas linhas, uma para as três divs e outra para a nova div */
+  grid-gap: 0 0; /* Define o espaçamento entre as colunas */
+  overflow-y: hidden;
+}
+
+#text-content{
+  font-family: "Archivo", sans-serif;
+  height: 160vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 20px ;
+  margin-left: 210px;
+}
+#first-text{
+  margin-top: 4px;
+}
+#third-text{
+  margin-bottom: 50px;
+}
+#first-text h1, #second-text h1, #third-text h1{
+  margin-bottom: 25px;
+  font-weight: 800;
+  font-size: 28px;
+}
+#first-text p, #third-text p{
+  text-align: start;
+  font-size: 22px;
+}
+#second-text {
+  font-family: "Archivo", sans-serif;
+  width: 30vw;
+  height: 160vh;
+  padding-top: 550px;
+  margin-right: 250px;
+  text-align: right;
+  
+}
+#second-text p{
+  text-align: right;
+  font-size: 22px;
+} 
+
+/*Retangulos cinzas vertical e horizontal e bolas amarelas*/
+#trace-rectangle{
+  width: 15vw;
+  height: 160vh;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-image: url(images_tela1/RetanguloCinzaMenor.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  
+}
+
+#row-rectangle{
+  height: 100%;
+  width: 7vw;
+  margin: 0 auto;
+  background-image: url(images_tela1/RetanguloCinzaMaior.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  overflow-y: hidden;
+}
+#yellow-ball{
+  width: 3.5vw;
+  height: 10vh;
+  margin: 230px auto 0;
+  background-image: url(images_tela1/bolaAmarela.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#yellow-ball2{
+  width: 3.5vw;
+  height: 10vh;
+  margin: 365px auto 0 ;
+  background-image: url(images_tela1/bolaAmarela.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#yellow-ball3{
+  width: 3.5vw;
+  height: 10vh;
+  margin: 485px auto 0;
+  background-image: url(images_tela1/bolaAmarela.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Imagem "Veja o que a galera está comentando" */
+#img-comments{
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+}
+#comments-img{
+  background-image: url(images_tela1/Comments.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 20vh;
+  margin-right: 45px;
+}
+
+/* Responsividade para telas menores*/
+@media (max-width: 1200px){
+  #img-yellow{
+    width: 100vw;
+    height: 40vh;
+    display: block;
+    margin: 0 455px 0 400px;
+  }
+  
+  #text-content{
+    margin-left: 145px;
+  }
+
+  #yellow-ball,#yellow-ball2,#yellow-ball3{
+    width: 4vw;
+  }
+
+  #comments-img{
+    width: 100vw;
+    height: 20vh;
+    margin-right: 100px;
+  }
+}
+
+/* Para larguras entre 1200px e 1440px */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  #yellow-ball,#yellow-ball2,#yellow-ball3{
+    width: 4vw;
+  }
+
+  #text-content {
+    margin-left: 170px;
+  }
+}
+
+/* Seção de comentários da galera*/
+#Comments{
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow-y: hidden ;
+}
+
+#RectangleLeft, #RectangleRight{
+  position: absolute;
+  top: 0;
+  height: 37.5vh;
+}
+
+#RectangleLeft{
+  left: 0;
+  width: 50%;
+  background-image: url(images_tela1/RetanguloCommentsEsq.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  overflow: hidden;
+}
+#CommentsLeft{
+  width: 100%;
+  height: 100%;
+  margin: 15px auto;
+  background-image: url(images_tela1/muieVerdeComments.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+#RectangleRight{
+  right: 0;
+  width: 50%;
+  background-image: url(images_tela1/RetanguloCommentsDir.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  overflow: hidden;
+}
+#CommentsRight{
+  width: 100%;
+  height: 100%;
+  margin: 15px auto;
+  background-image: url(images_tela1/muieVerdeComments.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+#CommentsBottom{
+  position: absolute;
+  clear: both;
+  width: 100%;
+  height: 37.5vh;
+  bottom: 0;
+  background-image: url(images_tela1/muieVerdeComments.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+}
+
+#FAQ{
+  width: 100%;
+  height: 190vh;
+  margin: 0 auto;
+
+}
+
+#FAQimg{
+  height: 16vh;
+  background-image: url(images_tela1/PERGUNTAS\ FREQUENTES.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin-top: 400px;
+}
+
+.accordion {
+  display: flex;
+  margin: 0 auto;
+  height: 5vh;
+  color: black;
+  cursor: pointer;
+  width: 70vw;
+  text-align: justify;
+  transition: 0.4s;
+  border-radius: 15px;
+  font-family: "Anek Malayalam",sans-serif;
+  font-size: 20px; /* Ajuste conforme necessário */
+  font-weight: 600; /* Peso da fonte alto */
+  box-shadow: 0px 0px 10px 0px rgba(90, 85, 85, 0.75); /* Sombra escura */
+  background-color: white;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  margin: 0 auto;
+  background-color: white;
+  width: 70vw;
+  font-family: "Anek Malayalam",sans-serif;
+  font-size: 20px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* Sombra escura */
+  padding: 20px 18px; /* Adiciona padding superior e inferior */
+  margin-bottom: 20px; /* Adiciona margem na parte inferior */
+}
+
+/* Para larguras entre 1200px e 1440px */
+/*@media (min-width: 1440px) and (max-width: 1600px) {
+  #yellow-ball,#yellow-ball2,#yellow-ball3{
+    width: 4vw;
+  }
+
+  #yellow-ball3{
+    margin: 280px auto 0;
+  }
+  
+  #Comments{
+    height: 100vh;
+  }
+  #CommentsLeft{
+    background-position: right top;
+    height: 50vh;
+  }
+  #CommentsRight{
+    height: 50vh;
+    background-position: left top;
+  }
+  #CommentsBottom{
+    height: 50vh;
+    background-position: bottom;
+  }
+
+  #FAQimg{
+    height: 20vh;
+    margin-top: 100px;
+  }
+}
+*/

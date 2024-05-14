@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wdth,wght@75..125,100..800&family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap');
+:root {
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  --header-height: 5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+/*Visibilidade Hidden para funcionar o SCROOL REVIEW*/
+.revealElipse-escura,
+.revealNav,
+.revealSection,
+.revealsomos1IMG,
+.revealsomos2IMG,
+.Info1,
+.Info2
+{
+  visibility: hidden;
+}
+
+#background{
+  background-image:linear-gradient(rgba(29, 29, 29, 0.4), rgba(29, 29, 29, 0.4)), url(images_tela2/MuiecomPeso.png);
+  z-index: -1;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+#Elipse{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url(images_tela1/Ellipse\ 1.png) ;
+  background-repeat: no-repeat;
+  background-position: left top ;
+  background-position-y: -100px;
+  overflow-y: hidden;
+}
+
+header{
+  z-index: 50;
+  font-family: "Anek Malayalam", sans-serif;
+}
+
+#containerHeader{
+  margin: 0 auto;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 0px 15px;
+  overflow-y: hidden;
+}
+
+#Logo{
+  width: 100%;
+  height: 18vh;
+}
+
+#Logo img{
+  width: 100%; 
+}
+.logoHeader{
+  filter: brightness(80%); /* Reduz o brilho da imagem ao passar o mouse */
+}
+.logoHeader img{
+  transition: transform 0.2s ease; /* Adiciona uma transição suave para a propriedade transform */
+}
+.logoHeader:hover img{
+  filter: brightness(80%); /* Reduz o brilho da imagem ao passar o mouse */
+}
+/* Efeito de clique */
+.logoHeader:active img {
+  transform: translateY(5px); /* Desloca o botão para baixo ao ser clicado */
+}
+
+.btn:hover{
+  text-decoration: underline;
+}
+
+
+.selectedSomos {
+  text-decoration: underline;
+}
+
+ul{
+  width: 1200px;
+  margin-right: 2px;
+  display: flex;
+}
+
+li{
+  margin: 0 auto;
+  font-size: 25px;
+  padding-right: 10px ;
+}
+
+li a{
+  color:white;
+}
+
+.loginNav{
+  width: 100px;
+  margin-right: 150px;
+}
+
+.loginNav a{
+  color: white;
+  font-size: 25px;
+}
+
+/* Responsividade para telas menores*/
+@media (max-width: 1200px){
+  header{
+    display: block;
+    width: 100%;
+  }
+
+  #containerHeader{
+    width: 100%;
+    height: 30vh;
+    margin: 0 auto;
+  }
+
+  nav{
+    width: 100%;
+  }
+
+  #Logo{
+    width: 100%;
+    height: auto;
+  }
+
+   #ul-header{
+    display: -ms-inline-grid;
+    width: 100vw;
+    height: 18vh;
+    flex-wrap: nowrap;
+  }
+  
+  li{
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .loginNav{
+    width: 20vw;
+    height: auto;
+    padding-bottom: 70px;
+    margin: 0 auto;
+  }
+  .loginNav a{
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+
+.first-content{
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: left;
+  position: absolute;
+  display: flex;
+  font-family: "Archivo",sans-serif;
+  padding: 0 100px 150px 100px;
+}
+
+.firstcontent-text h1{
+  color: white;
+  font-weight: 800;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.firstcontent-text p{
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
+/* Animando o botão verde de Login*/
+.btn-login img{
+  transition: transform 0.2s ease;
+}
+.btn-login:hover img{
+  filter: brightness(80%); /* Reduz o brilho da imagem ao passar o mouse */
+  transform: translateY(-6px); /* Move a imagem para cima */
+}
+.btn-login:active img {
+  transform: translateY(6px); /* Desloca o botão para baixo ao ser clicado */
+}
+/*Aqui termina o HEADER*/
+
+
+
+/* Triângulo e Retângulo do começo do MAIN*/
+#Triangulo{
+  background-image: url(images_tela1/triangulo_invertido.png);
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  background-position: top center;
+  margin: 0 auto;
+}
+#Retangulo{
+  background-image: url(images_tela1/Rectangle.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -50px;
+  width: 100vw;
+  height: 10vh;
+  display: block;
+}
+
+/* div id´s contendo as fotos e informações de cada membro */
+#somosContainer{
+  width: 100%;
+  height: 500vh;
+  display: block;
+  
+}
+
+#quemsomos1{
+  width: 100%;
+  height: 120vh;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+}
+#quemsomos1IMG{
+  left: 0;
+  height: 100%;
+  width: 50vw;  
+  background-image: url(images_tela2/jailson.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  margin: 10px auto;
+}
+#quemsomos1Info{
+  right: 0;
+  height: 100%;
+  width: 50vw;
+  margin: 10px 50px;
+}
+#quemsomos1Info img{
+  position: absolute;
+  top: 25%;
+}
+
+#quemsomos2{
+  width: 100%;
+  height: 120vh;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+}
+#quemsomos2IMG{
+  left: 0;
+  height: 100%;
+  width: 50vw;  
+  background-image: url(images_tela2/ualaci.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  margin: 10px auto;
+}
+#quemsomos2Info{
+  right: 0;
+  height: 100%;
+  width: 50vw;
+  margin: 10px 50px;
+}
+#quemsomos2Info img{
+  position: absolute;
+  top: 25%;
+}
+
+.Info1, .Info2{
+  position: relative;
+}
+
+.Info1 h1, .Info2 h1 {
+  font-family: "Anek malayalam", sans-serif;
+  position: absolute;
+  top: 35%; /* Ajuste conforme necessário para posicionar o h1 */
+  left: 55px; /* Ajuste conforme necessário para posicionar o h1 */
+  font-weight: 1000;
+  }
